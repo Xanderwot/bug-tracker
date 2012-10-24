@@ -22,7 +22,7 @@ gem 'simple-navigation-bootstrap'
 gem 'slim'
 gem 'slim-rails'
 gem 'squeel'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "nested_form"
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'enumerize'
