@@ -34,6 +34,9 @@ RailsAdmin.config do |config|
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
+
+  ################  Model configuration  ################
+
   config.model Department do
     edit do
       field :title
@@ -43,21 +46,6 @@ RailsAdmin.config do |config|
     end  
   end  
   config.model User do
-  #   # Found associations:
-    # Found columns:
-      configure :id, :integer 
-      configure :email, :string 
-      configure :password, :password         # Hidden 
-      configure :password_confirmation, :password         # Hidden  
-      configure :role, :enum do
-        enum do
-          # except = bindings[:object].id
-          User.role.options
-        end
-      end
-    list do; end
-    export do; end
-    show do; end
     edit do
       field :email, :string 
       field :password, :password         # Hidden 
@@ -88,8 +76,6 @@ RailsAdmin.config do |config|
     end
     update do; end
    end
-
-  ################  Model configuration  ################
 
   # Each model configuration can alternatively:
   #   - stay here in a `config.model 'ModelName' do ... end` block
