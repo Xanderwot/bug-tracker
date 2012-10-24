@@ -11,9 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024120708) do
+ActiveRecord::Schema.define(:version => 20121024132914) do
 
   create_table "departments", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -31,6 +37,22 @@ ActiveRecord::Schema.define(:version => 20121024120708) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "tts", :force => true do |t|
+    t.string   "company_name"
+    t.string   "addres"
+    t.date     "complite_to"
+    t.integer  "user_id"
+    t.string   "objective"
+    t.text     "description"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "project_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",     :null => false

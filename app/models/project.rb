@@ -1,6 +1,5 @@
-class Department < ActiveRecord::Base
-	has_many :users
-
+class Project < ActiveRecord::Base
+	has_many :tts
   attr_accessible :title
   validates :title, :presence => :true
 end

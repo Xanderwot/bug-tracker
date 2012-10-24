@@ -34,6 +34,14 @@ RailsAdmin.config do |config|
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
+  config.model Department do
+    edit do
+      field :title
+    end
+    create do 
+      field :title
+    end  
+  end  
   config.model User do
   #   # Found associations:
     # Found columns:
