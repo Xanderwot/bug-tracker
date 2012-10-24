@@ -34,7 +34,52 @@ RailsAdmin.config do |config|
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
-
+  config.model User do
+  #   # Found associations:
+    # Found columns:
+      configure :id, :integer 
+      configure :email, :string 
+      configure :password, :password         # Hidden 
+      configure :password_confirmation, :password         # Hidden  
+      configure :role, :enum do
+        enum do
+          # except = bindings[:object].id
+          User.role.options
+        end
+      end
+    list do; end
+    export do; end
+    show do; end
+    edit do
+      field :email, :string 
+      field :password, :password         # Hidden 
+      field :password_confirmation, :password         # Hidden 
+      field :first_name, :string
+      field :last_name, :string
+      field :department 
+      field :role, :enum do
+        enum do
+          # except = bindings[:object].id
+          User.role.options
+        end
+      end
+    end
+    create do 
+      field :email, :string 
+      field :password, :password         # Hidden 
+      field :password_confirmation, :password         # Hidden  
+      field :first_name, :string
+      field :last_name, :string
+      field :department
+      field :role, :enum do
+        enum do
+          # except = bindings[:object].id
+          User.role.options
+        end
+      end
+    end
+    update do; end
+   end
 
   ################  Model configuration  ################
 

@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+	include Enumerize
+
+	belongs_to :department
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -6,6 +9,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :role, :department_id
+  validate :email, :password, :last_name, :first_name, :role, :department_id, :presence => :true
   # attr_accessible :title, :body
+  enumerize :role, :in => %w[admin user], default: 'user'
 end
