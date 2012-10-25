@@ -1,0 +1,46 @@
+table.testtable
+	tr
+		<td colspan='2'>#{image_tag "/image"}</td>
+		td
+			table
+				tr
+					td= @tt.project.title
+				tr	
+					td= @tt.company_name
+				tr	
+					td= @tt.addres
+		<td colspan='4'>
+			table
+				tr
+					td= id_helper(@tt.id)	
+					td Priority
+					td= @tt.priority
+					td status
+					td coming soon
+				tr
+					<td colspan='5' align='center'>#{@tt.objective}</td>
+				tr
+					<td colspan='5' align='center'>#{@tt.description}</td>
+		</td>			
+	tr
+		td open at
+		td= @tt.created_at
+		td open by
+		td coming soon
+		<td colspan='2'> otvetstveny </td>
+		td coming soon
+	tr
+		td complite to
+		td= @tt.complite_to
+		td doing user
+		td= "#{@tt.user.first_name} #{@tt.user.last_name}"
+		<td colspan='2'> control by </td>
+		td comming soon
+	tr
+		td closed_at
+		td coming soon
+		td closed_by
+		td coming soon
+		td time 
+		td coming soon
+		td what is it?	

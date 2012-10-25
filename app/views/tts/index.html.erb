@@ -1,0 +1,11 @@
+<table class="table">
+	<% Tt.all.each do |tt| %>
+		<tr class="<%=tt.priority%>">
+			<td> <%= link_to id_helper(tt.id), "/tts/#{tt.id}" %>  <br>
+				<%= tt.description %></td>
+			<td><%= tt.objective %> <br>
+				<%= tt.complite_to %>
+			</td>
+			<td>Priority: <%=tt.priority%></td>
+	<% end %>		
+</table>				

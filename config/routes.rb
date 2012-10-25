@@ -1,8 +1,6 @@
 BugTracker::Application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
   devise_for :users
-
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   
 
   # The priority is based upon order of creation:
@@ -17,7 +15,7 @@ BugTracker::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resources :tts
 
   # Sample resource route with options:
   #   resources :products do
@@ -54,7 +52,7 @@ BugTracker::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index'
+  root :to => 'Tts#index'
 
   # See how all your routes lay out with "rake routes"
 

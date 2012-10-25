@@ -36,19 +36,23 @@ html lang="en"
                   li= link_to "Admin", "/admin"
 
     .container
-
       .row
-        .span9
-          = bootstrap_flash
-          = yield
-        .span3
-          / .well.sidebar-nav
-          /   h3 Sidebar
-          /   ul.nav.nav-list
-          /     li.nav-header Sidebar
-          /     li= link_to "Link 1", "/path1"
-          /     li= link_to "Link 2", "/path2"
-          /     li= link_to "Link 3", "/path3"
+        - if current_user.nil?
+          .span9_not
+            = bootstrap_flash
+            = yield          
+        - else    
+          .span9
+            = bootstrap_flash
+            = yield
+          .span3
+            / .well.sidebar-nav
+            /   h3 Sidebar
+            /   ul.nav.nav-list
+            /     li.nav-header Sidebar
+            /     li= link_to "Link 1", "/path1"
+            /     li= link_to "Link 2", "/path2"
+            /     li= link_to "Link 3", "/path3"
     
       footer
         p &copy; Company 2012

@@ -3,6 +3,8 @@
 
 RailsAdmin.config do |config|
 
+  config.authorize_with :cancan
+
 
   ################  Global configuration  ################
 
@@ -37,6 +39,54 @@ RailsAdmin.config do |config|
 
   ################  Model configuration  ################
 
+  config.model Tt do
+    edit do
+      field :company_name
+      field :addres
+      field :complite_to
+      field :priority, :enum do
+        enum do
+          Tt.priority.options
+        end  
+      end  
+      field :user_id, :enum do
+        enum do
+          User.all.map{|n| "#{n.first_name} #{n.last_name}"}
+        end
+      end
+      field :objective
+      field :description
+      field :project
+      field :image
+    end
+    create do
+      field :company_name
+      field :addres
+      field :complite_to
+      field :priority, :enum do
+        enum do
+          Tt.priority.options
+        end  
+      end 
+      field :user_id, :enum do
+        enum do
+          User.all.map{|n| "#{n.id} - #{n.first_name} #{n.last_name}"}
+        end
+      end
+      field :objective
+      field :description
+      field :project
+      field :image
+    end  
+  end
+  config.model Project do
+    edit do
+      exclude_fields :tts
+    end
+    create do
+      exclude_fields :tts
+    end  
+  end  
   config.model Department do
     edit do
       field :title

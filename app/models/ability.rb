@@ -7,6 +7,10 @@ class Ability
   end
 
   def admin
+    can :manage, Department
+    can :manage, User
+    can :manage, Project
+    can :manage, Tt
     #Admin panel ability
     can :access, :rails_admin
     can :dashboard

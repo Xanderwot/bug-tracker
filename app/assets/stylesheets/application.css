@@ -15,3 +15,22 @@
 body .container .row {
 	padding-top: 60px; 
 }
+
+body .container .row .span9_not {
+	padding-left: 40%;
+}
+tr.extremal{
+	background: #D62929;
+}
+tr.hight {
+	background: #FF7676;
+}
+tr.normal {
+	background: #AEFFBF;
+}
+tr.low {
+	background: #4FD36A;
+}
+table.testtable td {
+	border: 1px solid;
+}

@@ -7,7 +7,6 @@ class CreateTts < ActiveRecord::Migration
     	t.integer :user_id
     	t.string :objective
     	t.text :description
-    	t.has_attached_file :picture
 
       t.timestamps
     end
